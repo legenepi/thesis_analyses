@@ -118,9 +118,9 @@ add_dom_rec$test <- as.factor(add_dom_rec$test)
 add_dom <- add_dom_rec %>% filter(test != "recessive")
 add_dom_or_plot <- add_dom %>% ggplot(aes(x = snpid, y = odds_ratio, color = test)) +
   geom_boxplot(position=position_jitterdodge()) + geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), position = "dodge") +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
+  theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust = 1))
 #and save plot:
-ggsave("output/OR_sentinel_genetic_test_boxplot_adddom.png",add_dom_or_plot,width = 11, height = 8)
+ggsave("output/OR_sentinel_genetic_test_boxplot_adddom.png",add_dom_or_plot,width = 20, height = 8)
 
 
 #plot all three to show how recessive has large confidence intervals:
@@ -128,6 +128,6 @@ ggsave("output/OR_sentinel_genetic_test_boxplot_adddom.png",add_dom_or_plot,widt
 add_dom_rec <- add_dom_rec %>% filter(snpid != "rs143191487")
 or_plot <- add_dom_rec %>% ggplot(aes(x = snpid, y = odds_ratio, color = test)) +
   geom_boxplot(position=position_jitterdodge()) + geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), position = "dodge") +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
+  theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust = 1))
 #and save plot:
-ggsave("output/OR_sentinel_genetic_test_boxplot_adddomrec.png",or_plot,width = 11, height = 8)
+ggsave("output/OR_sentinel_genetic_test_boxplot_adddomrec.png",or_plot,width = 20, height = 8)
