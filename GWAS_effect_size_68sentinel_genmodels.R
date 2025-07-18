@@ -56,7 +56,7 @@ ggplot(data = df_plot, aes(x = logodds_recessive, y = logodds_gwas)) +
   theme_minimal() + geom_vline(xintercept = 0, linetype="dashed", color = "grey", size = 0.25) +
   geom_hline(yintercept = 0, linetype="dashed", color="grey", size = 0.5) +
   ylim(-1.5, +2.0) + xlim(-1.5, +2.5) +
-  xlab("Recessive") + ylab("Additive (Discovery)") +
+  xlab("Beta (Recessive)") + ylab("Beta (Additive/Discovery)") +
   geom_text_repel(
     data = subset(df_plot, logOR_diff >= 0.2 ),
     aes(label = snpid),
@@ -83,7 +83,7 @@ ggplot(data = df_plot, aes(x = logodds_dominant, y = logodds_gwas)) +
   theme_minimal() + geom_vline(xintercept = 0, linetype="dashed", color = "grey", size = 0.25) +
   geom_hline(yintercept = 0, linetype="dashed", color="grey", size = 0.5) +
   ylim(-0.6, +0.4) + xlim(-0.6, + 0.4) +
-  xlab("Dominant") + ylab("Additive (Discovery)") +
+  xlab("Beta (Dominant)") + ylab("Beta (Additive-Discovery)") +
   geom_text_repel(
     data = subset(df_plot, logOR_diff >= 0.1 ),
     aes(label = snpid),
