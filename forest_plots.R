@@ -38,8 +38,6 @@ df <- data.frame(logOR,selogOR,study)
 #max_val <- ifelse(max_val_tmp == 1, 1, max_val_tmp)
 #print(min_val)
 #print(max_val)
-viz_forest(x=df[,c("logOR","selogOR")],variant = "classic",xlab = "OR", annotate_CI = T,study_labels=df[,c("study")],
-x_trans_function = exp, method = "DL", text_size = 10,summary_label = "Summary effect",
-col="Greys",x_limit=c(-0.5,1.05))
-ggsave(paste0("output/forest_plot_",snp,".pdf"), width = 20, height = 20)
+viz_forest(x=df[,c("logOR","selogOR")],variant = "classic",xlab = "OR", annotate_CI = T,study_labels=df[,c("study")], x_trans_function = exp, method = "DL", text_size = 10,summary_label = "Summary effect", col="Greys",x_limit=c(-0.42,1.05))
+ggsave(paste0("output/forest_plot_",snp,".png"), width = 20, height = 20)
 }
